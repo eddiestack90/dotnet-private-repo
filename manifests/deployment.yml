@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: eddiestackdotnetprivaterepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eddiestackdotnetprivaterepo
+  template:
+    metadata:
+      labels:
+        app: eddiestackdotnetprivaterepo 
+    spec:
+      containers:
+        - name: eddiestackdotnetprivaterepo 
+          image: newrelic.azurecr.io/eddiestackdotnetprivaterepo
+          ports:
+          - containerPort: 80
