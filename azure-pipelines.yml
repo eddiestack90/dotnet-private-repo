@@ -31,7 +31,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: eddielaptop
+      name: eddie_app_pool
       demands:
       - agent.name -equals myagent
     steps:
@@ -57,7 +57,7 @@ stages:
     condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
     displayName: Deploy
     pool:
-      name: eddielaptop
+      name: eddie_app_pool
       demands:
       - agent.name -equals myagent
     environment: 'eddiestack90dotnetcoreapi1.default'
